@@ -3,7 +3,7 @@ import { formSchema } from "../validators/lead.schema.js";
 
 const router = express.Router();
 
-router.post("/partner", async (req, res) => {
+router.post("/lead", async (req, res) => {
   const result = formSchema.safeParse(req.body);
 
   if (!result.success) {
