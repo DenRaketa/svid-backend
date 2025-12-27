@@ -1,5 +1,5 @@
 import express from "express";
-import { formSchema } from "../validators/partner.schema.js";
+import { formSchema } from "../validators/lead.schema.js";
 
 const router = express.Router();
 
@@ -16,7 +16,7 @@ router.post("/partner", async (req, res) => {
   const data = result.data;
   try {
     const airtableResponse = await fetch(
-      "https://api.airtable.com/v0/appL0usV2OrNFLr7E/tblFrN89KwFzUengq",
+      "https://api.airtable.com/v0/appL0usV2OrNFLr7E/tblb9mTxqhcxBfq9V",
       {
         method: "POST",
         headers: {
@@ -29,6 +29,7 @@ router.post("/partner", async (req, res) => {
             Directions: data.directions,
             InteractionFormat: data.internactionFormat,
             Phone: data.phone ?? null,
+            Type: data.type
           },
         }),
       }

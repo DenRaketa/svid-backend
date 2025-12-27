@@ -13,4 +13,6 @@ export const formSchema = z.object({
     .string()
     .regex(/^\+?\d{7,15}$/, "Invalid phone number")
     .optional(),
+
+  type: z.enum(['partner', 'member']),
 });
